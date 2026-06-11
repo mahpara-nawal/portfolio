@@ -84,12 +84,12 @@ export default function Projects({ onOpenModal }: { onOpenModal: (p: any) => voi
   }, []);
 
   return (
-    <section className="relative py-16 overflow-hidden" id="projects">
+    <section className="relative py-16 px-4 sm:px-8 overflow-hidden" id="projects">
       {/* Diagonal overlay */}
       <div className="bg-diagonal absolute inset-0 z-0 pointer-events-none" />
-      <div className="absolute left-0 top-0 bottom-0 w-px pointer-events-none" style={{ background: "linear-gradient(to bottom, transparent, rgba(176,38,255,0.03), transparent)" }} />
+      <div className="hidden md:block absolute left-0 top-0 bottom-0 w-px pointer-events-none" style={{ background: "linear-gradient(to bottom, transparent, rgba(176,38,255,0.03), transparent)" }} />
 
-      <div ref={wrapperRef} className="max-w-[1300px] mx-auto px-8 mb-16 relative z-10 glass p-8 md:p-12 rounded-3xl transition-all duration-1000" style={{ opacity: wrapperVisible ? 1 : 0, transform: wrapperVisible ? "translateY(0)" : "translateY(20px)" }}>
+      <div ref={wrapperRef} className="max-w-[1300px] mx-auto relative z-10 glass p-4 sm:p-6 md:p-12 rounded-3xl transition-all duration-1000" style={{ opacity: wrapperVisible ? 1 : 0, transform: wrapperVisible ? "translateY(0)" : "translateY(20px)" }}>
         <div
           ref={titleRef}
           className="grid md:grid-cols-12 gap-8"
@@ -137,9 +137,10 @@ function MarqueeCard({ project, index, onOpen }: { project: (typeof projects)[0]
 
   return (
     <div
-      className="p-8 shrink-0 cursor-pointer transition-all duration-500 relative rounded-3xl"
+      className="shrink-0 cursor-pointer transition-all duration-500 relative rounded-3xl"
       style={{
-        width: 400,
+        width: "clamp(280px, 50vw, 400px)",
+        padding: "clamp(1.25rem, 3vw, 2rem)",
         background: "rgba(18,18,18,0.85)",
         border: "1px solid rgba(176,38,255,0.15)",
         transform: hovered ? "translateY(-6px)" : "translateY(0)",

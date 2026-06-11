@@ -72,14 +72,14 @@ export default function About() {
   }, []);
 
   return (
-    <section className="relative py-16 px-8 overflow-hidden" id="about">
+    <section className="relative py-16 px-4 sm:px-8 overflow-hidden" id="about">
       {/* Decorative elements */}
       <div className="bg-diagonal absolute inset-0 z-0 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-px pointer-events-none" style={{ background: "linear-gradient(to bottom, transparent, rgba(176,38,255,0.03), transparent)" }} />
-      <div className="absolute right-8 top-[30%] w-6 h-px pointer-events-none" style={{ background: "linear-gradient(to left, var(--accent), transparent)" }} />
-      <div className="absolute left-0 top-[70%] w-6 h-px pointer-events-none" style={{ background: "linear-gradient(to right, var(--accent), transparent)" }} />
+      <div className="hidden md:block absolute right-0 top-0 bottom-0 w-px pointer-events-none" style={{ background: "linear-gradient(to bottom, transparent, rgba(176,38,255,0.03), transparent)" }} />
+      <div className="hidden md:block absolute right-8 top-[30%] w-6 h-px pointer-events-none" style={{ background: "linear-gradient(to left, var(--accent), transparent)" }} />
+      <div className="hidden md:block absolute left-0 top-[70%] w-6 h-px pointer-events-none" style={{ background: "linear-gradient(to right, var(--accent), transparent)" }} />
 
-      <div ref={wrapperRef} className="max-w-[1300px] mx-auto relative z-10 glass p-8 md:p-12 rounded-3xl transition-all duration-1000" style={{ opacity: wrapperVisible ? 1 : 0, transform: wrapperVisible ? "translateY(0)" : "translateY(20px)" }}>
+      <div ref={wrapperRef} className="max-w-[1300px] mx-auto relative z-10 glass p-4 sm:p-6 md:p-12 rounded-3xl transition-all duration-1000" style={{ opacity: wrapperVisible ? 1 : 0, transform: wrapperVisible ? "translateY(0)" : "translateY(20px)" }}>
         <div className="grid md:grid-cols-12 gap-8 mb-24">
           <div className="md:col-span-5">
             <AnimateIn>

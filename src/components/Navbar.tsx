@@ -43,15 +43,15 @@ export default function Navbar() {
         transition: "background 0.5s ease, backdrop-filter 0.5s ease",
       }}
     >
-      <div className="max-w-[1300px] mx-auto px-8 py-5 flex items-center justify-between">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-8 py-5 flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="text-sm font-semibold text-white/80 hover:text-white transition-colors"
           style={{ fontFamily: "'Chakra Petch', sans-serif", letterSpacing: "0.02em" }}
         >
-          FN
+          MN
         </button>
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-4 sm:gap-10">
           {links.map((link) => (
             <button
               key={link.href}

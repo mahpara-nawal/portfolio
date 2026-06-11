@@ -16,37 +16,37 @@ export default function Contact() {
   }, []);
 
   return (
-    <section className="relative py-16 px-8 overflow-hidden" id="contact">
+    <section className="relative py-16 px-4 sm:px-8 overflow-hidden" id="contact">
       <div className="bg-grid absolute inset-0 z-0" />
       <div className="bg-diagonal absolute inset-0 z-0 pointer-events-none opacity-50" />
 
-      {/* Orbital rings */}
-      <div className="orbit-ring" style={{ width: 500, height: 500, top: "5%", right: "-5%" }} />
-      <div className="orbit-ring orbit-ring-dashed" style={{ width: 350, height: 350, top: "15%", right: "2%" }} />
-      <div className="orbit-ring" style={{ width: 300, height: 300, bottom: "10%", left: "-3%" }} />
-      <div className="orbit-ring orbit-ring-dashed" style={{ width: 180, height: 180, bottom: "25%", left: "10%" }} />
+      {/* Orbital rings - hide on mobile */}
+      <div className="hidden md:block orbit-ring" style={{ width: 500, height: 500, top: "5%", right: "-5%" }} />
+      <div className="hidden md:block orbit-ring orbit-ring-dashed" style={{ width: 350, height: 350, top: "15%", right: "2%" }} />
+      <div className="hidden md:block orbit-ring" style={{ width: 300, height: 300, bottom: "10%", left: "-3%" }} />
+      <div className="hidden md:block orbit-ring orbit-ring-dashed" style={{ width: 180, height: 180, bottom: "25%", left: "10%" }} />
 
       {/* Decorative line */}
-      <div className="absolute top-0 left-1/2 w-px h-16 pointer-events-none" style={{ background: "linear-gradient(to bottom, var(--accent), transparent)" }} />
+      <div className="hidden md:block absolute top-0 left-1/2 w-px h-16 pointer-events-none" style={{ background: "linear-gradient(to bottom, var(--accent), transparent)" }} />
 
-      {/* Corner brackets */}
-      <div className="absolute top-8 right-8 w-12 h-12 pointer-events-none z-[2]">
+      {/* Corner brackets - hide on mobile */}
+      <div className="hidden md:block absolute top-8 right-8 w-12 h-12 pointer-events-none z-[2]">
         <div className="absolute top-0 right-0 w-6 h-px" style={{ background: "var(--accent)" }} />
         <div className="absolute top-0 right-0 w-px h-6" style={{ background: "var(--accent)" }} />
       </div>
-      <div className="absolute bottom-8 left-8 w-12 h-12 pointer-events-none z-[2]">
+      <div className="hidden md:block absolute bottom-8 left-8 w-12 h-12 pointer-events-none z-[2]">
         <div className="absolute bottom-0 left-0 w-6 h-px" style={{ background: "var(--accent)" }} />
         <div className="absolute bottom-0 left-0 w-px h-6" style={{ background: "var(--accent)" }} />
       </div>
 
-      {/* Floating dots */}
-      <div className="absolute pointer-events-none z-[2]" style={{ top: "20%", left: "8%", width: 4, height: 4, borderRadius: "50%", background: "var(--accent)", opacity: 0.15, boxShadow: "0 0 20px var(--accent)", animation: "float 5s ease-in-out infinite" }} />
-      <div className="absolute pointer-events-none z-[2]" style={{ top: "60%", right: "12%", width: 3, height: 3, borderRadius: "50%", background: "var(--accent)", opacity: 0.1, boxShadow: "0 0 15px var(--accent)", animation: "float 4s ease-in-out infinite 1s" }} />
-      <div className="absolute pointer-events-none z-[2]" style={{ bottom: "30%", left: "15%", width: 5, height: 5, borderRadius: "50%", background: "var(--accent)", opacity: 0.08, boxShadow: "0 0 25px var(--accent)", animation: "float 6s ease-in-out infinite 0.5s" }} />
+      {/* Floating dots - hide on mobile */}
+      <div className="hidden md:block absolute pointer-events-none z-[2]" style={{ top: "20%", left: "8%", width: 4, height: 4, borderRadius: "50%", background: "var(--accent)", opacity: 0.15, boxShadow: "0 0 20px var(--accent)", animation: "float 5s ease-in-out infinite" }} />
+      <div className="hidden md:block absolute pointer-events-none z-[2]" style={{ top: "60%", right: "12%", width: 3, height: 3, borderRadius: "50%", background: "var(--accent)", opacity: 0.1, boxShadow: "0 0 15px var(--accent)", animation: "float 4s ease-in-out infinite 1s" }} />
+      <div className="hidden md:block absolute pointer-events-none z-[2]" style={{ bottom: "30%", left: "15%", width: 5, height: 5, borderRadius: "50%", background: "var(--accent)", opacity: 0.08, boxShadow: "0 0 25px var(--accent)", animation: "float 6s ease-in-out infinite 0.5s" }} />
 
       <div
         ref={ref}
-        className="relative z-10 max-w-[1300px] mx-auto glass p-8 md:p-12 rounded-3xl"
+        className="relative z-10 max-w-[1300px] mx-auto glass p-4 sm:p-6 md:p-12 rounded-3xl"
         style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(24px)", transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)" }}
       >
         <div className="grid md:grid-cols-12 gap-8 items-start">

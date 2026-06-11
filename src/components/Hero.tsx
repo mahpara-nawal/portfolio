@@ -68,12 +68,12 @@ export default function Hero() {
   return (
     <section
       id="work"
-      className="relative min-h-screen flex flex-col justify-center px-8 overflow-hidden pt-24"
+      className="relative min-h-screen flex flex-col justify-center px-4 sm:px-8 overflow-hidden pt-24"
     >
-      {/* Decorative lines */}
-      <div className="absolute left-12 top-0 bottom-0 w-px pointer-events-none" style={{ background: "linear-gradient(to bottom, transparent, rgba(176,38,255,0.04), transparent)" }} />
-      <div className="absolute left-12 top-[20%] w-4 h-px pointer-events-none" style={{ background: "var(--accent)" }} />
-      <div className="absolute left-12 top-[60%] w-8 h-px pointer-events-none" style={{ background: "linear-gradient(to right, var(--accent), transparent)" }} />
+      {/* Decorative lines - hide on mobile */}
+      <div className="hidden md:block absolute left-12 top-0 bottom-0 w-px pointer-events-none" style={{ background: "linear-gradient(to bottom, transparent, rgba(176,38,255,0.04), transparent)" }} />
+      <div className="hidden md:block absolute left-12 top-[20%] w-4 h-px pointer-events-none" style={{ background: "var(--accent)" }} />
+      <div className="hidden md:block absolute left-12 top-[60%] w-8 h-px pointer-events-none" style={{ background: "linear-gradient(to right, var(--accent), transparent)" }} />
 
       {/* Diagonal overlay */}
       <div className="bg-diagonal absolute inset-0 z-0 pointer-events-none" />
@@ -95,9 +95,9 @@ export default function Hero() {
         </div>
       )}
 
-      <div className="relative z-10 max-w-[1300px] mx-auto w-full glass p-8 md:p-12 rounded-3xl transition-all duration-1000" style={{ opacity: contentVisible ? 1 : 0, transform: contentVisible ? "translateY(0)" : "translateY(12px)" }}>
-        <div className="grid md:grid-cols-12 gap-6 items-center">
-          <div className="md:col-span-7">
+      <div className="relative z-10 max-w-[1300px] mx-auto w-full glass p-4 sm:p-6 md:p-12 rounded-3xl transition-all duration-1000" style={{ opacity: contentVisible ? 1 : 0, transform: contentVisible ? "translateY(0)" : "translateY(12px)" }}>
+        <div className="grid md:grid-cols-12 gap-4 sm:gap-6 items-center">
+          <div className="md:col-span-7 flex flex-col items-center md:items-start">
             <div className="mb-4 flex items-center gap-2">
               <span className="w-6 h-[2px]" style={{ background: "var(--accent)" }} />
               <span className="text-[10px] tracking-[0.15em] uppercase" style={{ color: "var(--text-muted)", fontFamily: "'ASTONIX', 'Audiowide', 'Chakra Petch', sans-serif" }}>
@@ -106,10 +106,8 @@ export default function Hero() {
             </div>
 
             <div
-              className="mb-6 overflow-hidden"
+              className="mb-6 overflow-hidden w-full max-w-[400px] sm:max-w-[500px] aspect-square mx-auto md:mx-0"
               style={{
-                width: 500,
-                height: 500,
                 clipPath: "polygon(16% 0, 100% 0, 100% 100%, 0 100%, 0 16%)",
                 boxShadow: "0 0 0 1px rgba(176,38,255,0.25), 0 0 20px rgba(176,38,255,0.08), 0 8px 32px rgba(0,0,0,0.5)",
                 borderRadius: "0",
@@ -122,9 +120,9 @@ export default function Hero() {
               />
             </div>
 
-            <div className="h-10 flex items-center mb-2">
+            <div className="h-10 flex items-center mb-2 w-full overflow-hidden">
               <span
-                className="text-xl sm:text-2xl tracking-wider"
+                className="text-lg sm:text-xl md:text-2xl tracking-wider truncate"
                 style={{ color: "var(--text-muted)", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}
               >
                 {roleText}
@@ -134,18 +132,18 @@ export default function Hero() {
           </div>
 
             <div className="md:col-span-5">
-            <h2 className="heading-lg text-[clamp(2.5rem,6vw,4.5rem)] mb-6">
+            <h2 className="heading-lg text-[clamp(2rem,6vw,4.5rem)] mb-6 text-center md:text-left">
               Profile
             </h2>
-            <div className="text-base leading-relaxed space-y-5" style={{ color: "#999", fontFamily: "'JetBrains Mono', 'Chakra Petch', monospace", textShadow: "0 0 12px rgba(176,38,255,0.03)" }}>
-              <p className="tracking-wide min-h-[1.5em]">{desc1}{descPhase === 0 && desc1.length < para1.length ? <span className="ml-0.5" style={{ color: "var(--accent)" }}>|</span> : null}</p>
-              <p className="tracking-wide min-h-[1.5em]">{desc2}{descPhase === 1 && desc2.length < para2.length ? <span className="ml-0.5" style={{ color: "var(--accent)" }}>|</span> : null}</p>
-              <p className="text-xs tracking-[0.2em] uppercase pt-3 min-h-[1.5em]" style={{ color: "var(--accent)", fontFamily: "'JetBrains Mono', monospace" }}>{desc3}{descPhase === 2 && desc3.length < tagline.length ? <span className="ml-0.5" style={{ color: "var(--accent)" }}>|</span> : null}</p>
+            <div className="text-sm sm:text-base leading-relaxed space-y-5" style={{ color: "#999", fontFamily: "'JetBrains Mono', 'Chakra Petch', monospace", textShadow: "0 0 12px rgba(176,38,255,0.03)" }}>
+              <p className="tracking-wide min-h-[1.5em] break-words">{desc1}{descPhase === 0 && desc1.length < para1.length ? <span className="ml-0.5" style={{ color: "var(--accent)" }}>|</span> : null}</p>
+              <p className="tracking-wide min-h-[1.5em] break-words">{desc2}{descPhase === 1 && desc2.length < para2.length ? <span className="ml-0.5" style={{ color: "var(--accent)" }}>|</span> : null}</p>
+              <p className="text-xs tracking-[0.2em] uppercase pt-3 min-h-[1.5em] break-words text-center md:text-left" style={{ color: "var(--accent)", fontFamily: "'JetBrains Mono', monospace" }}>{desc3}{descPhase === 2 && desc3.length < tagline.length ? <span className="ml-0.5" style={{ color: "var(--accent)" }}>|</span> : null}</p>
             </div>
 
-            <div className="flex flex-wrap gap-3 mt-8">
-              <a href="#projects" className="btn-primary"><span>View Projects</span></a>
-              <a href="#contact" className="btn-ghost">Get in Touch</a>
+            <div className="flex flex-col sm:flex-row gap-3 mt-8 w-full sm:w-auto">
+              <a href="#projects" className="btn-primary w-full sm:w-auto text-center"><span>View Projects</span></a>
+              <a href="#contact" className="btn-ghost w-full sm:w-auto text-center">Get in Touch</a>
             </div>
 
             <div className="flex items-center justify-center gap-4 mt-12">
