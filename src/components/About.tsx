@@ -87,7 +87,7 @@ export default function About() {
                 <span className="w-6 h-[2px]" style={{ background: "var(--accent)" }} />
                 <span className="section-label">About</span>
               </div>
-              <h2 className="heading-lg text-[clamp(2.5rem,6vw,4.5rem)] mb-8">
+              <h2 className="heading-lg text-[clamp(2.5rem,6vw,4.5rem)] mb-8" style={{ fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif", textShadow: "0 0 12px rgba(176,38,255,0.06)" }}>
                 From
                 <br />
                 <span><span style={{ color: "var(--accent)" }}>pixels</span> to</span>

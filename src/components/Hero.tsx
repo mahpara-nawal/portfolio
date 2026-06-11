@@ -123,7 +123,7 @@ export default function Hero() {
             <div className="h-10 flex items-center mb-2 w-full overflow-hidden">
               <span
                 className="text-lg sm:text-xl md:text-2xl tracking-wider truncate"
-                style={{ color: "var(--text-muted)", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}
+                style={{ color: "var(--text-muted)", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif", textShadow: "0 0 8px rgba(176,38,255,0.04)" }}
               >
                 {roleText}
                 <span className="ml-0.5" style={{ color: "var(--accent)" }}>|</span>
@@ -132,7 +132,7 @@ export default function Hero() {
           </div>
 
             <div className="md:col-span-5">
-            <h2 className="heading-lg text-[clamp(2rem,6vw,4.5rem)] mb-6 text-center md:text-left">
+            <h2 className="heading-lg text-[clamp(2rem,6vw,4.5rem)] mb-6 text-center md:text-left" style={{ fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif", textShadow: "0 0 12px rgba(176,38,255,0.06)" }}>
               Profile
             </h2>
             <div className="text-sm sm:text-base leading-relaxed space-y-5" style={{ color: "#999", fontFamily: "'JetBrains Mono', 'Chakra Petch', monospace", textShadow: "0 0 12px rgba(176,38,255,0.03)" }}>

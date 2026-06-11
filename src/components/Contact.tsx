@@ -55,7 +55,7 @@ export default function Contact() {
               <span className="w-6 h-[2px]" style={{ background: "var(--accent)" }} />
               <span className="section-label">Contact</span>
             </div>
-            <h2 className="heading-lg text-[clamp(2.5rem,6vw,4.5rem)]">
+            <h2 className="heading-lg text-[clamp(2.5rem,6vw,4.5rem)]" style={{ fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif", textShadow: "0 0 12px rgba(176,38,255,0.06)" }}>
               Let&apos;s
               <br />
               <span style={{ color: "var(--accent)" }}>build</span>
