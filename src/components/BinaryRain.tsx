@@ -24,7 +24,7 @@ export default function BinaryRain() {
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      cols = canvas.width < 640 ? Math.floor(canvas.width / 18) : 60;
+      cols = canvas.width < 640 ? Math.floor(canvas.width / 12) : 60;
       drops = Array(cols).fill(1);
       colSizes = Array.from({ length: cols }, () => sizes[Math.floor(Math.random() * sizes.length)]);
       colX = Array.from({ length: cols }, () => Math.random() * canvas.width);
@@ -35,7 +35,7 @@ export default function BinaryRain() {
 
     const draw = () => {
       animId = requestAnimationFrame(draw);
-      ctx.fillStyle = "rgba(11, 11, 11, 0.015)";
+      ctx.fillStyle = `rgba(11, 11, 11, ${canvas.width < 640 ? 0.008 : 0.015})`;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.textAlign = "center";
 
@@ -45,7 +45,7 @@ export default function BinaryRain() {
         const speed = speeds[i];
         ctx.font = `bold ${size}px 'JetBrains Mono', monospace`;
         const c = chars[Math.floor(Math.random() * chars.length)];
-        const opacity = 0.5 + Math.random() * 0.4;
+        const opacity = canvas.width < 640 ? 0.6 + Math.random() * 0.35 : 0.5 + Math.random() * 0.4;
         ctx.fillStyle = `rgba(176, 38, 255, ${opacity})`;
         ctx.fillText(c, x, drops[i] * size * 0.5 * speed);
 
