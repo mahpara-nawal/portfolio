@@ -116,7 +116,7 @@ export default function Projects({ onOpenModal }: { onOpenModal: (p: any) => voi
         </div>
       </div>
 
-      <div className="marquee-container relative z-10">
+      <div className="marquee-container relative z-10 px-4 sm:px-0">
         <div className="marquee-track">
           {[...projects, ...projects].map((p, i) => (
             <MarqueeCard
@@ -139,8 +139,8 @@ function MarqueeCard({ project, index, onOpen }: { project: (typeof projects)[0]
     <div
       className="shrink-0 cursor-pointer transition-all duration-500 relative rounded-3xl"
       style={{
-        width: "clamp(280px, 50vw, 400px)",
-        padding: "clamp(1.25rem, 3vw, 2rem)",
+        width: "clamp(240px, 72vw, 400px)",
+        padding: "clamp(1rem, 2.5vw, 2rem)",
         background: "rgba(18,18,18,0.85)",
         border: "1px solid rgba(176,38,255,0.15)",
         transform: hovered ? "translateY(-6px)" : "translateY(0)",
@@ -153,35 +153,35 @@ function MarqueeCard({ project, index, onOpen }: { project: (typeof projects)[0]
       <div className="flex items-start justify-between mb-3">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs px-2 py-0.5 rounded tracking-[0.15em]" style={{ background: "rgba(176,38,255,0.08)", color: "var(--accent)", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>
+            <span className="text-[10px] sm:text-xs px-2 py-0.5 rounded tracking-[0.15em]" style={{ background: "rgba(176,38,255,0.08)", color: "var(--accent)", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>
               {project.dept}
             </span>
-            <span className="text-xs tracking-[0.1em]" style={{ color: "#bbb", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>
+            <span className="text-[10px] sm:text-xs tracking-[0.1em]" style={{ color: "#bbb", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>
               {String(index + 1).padStart(2, "0")}
             </span>
           </div>
-          <h3 className="text-lg font-bold text-white mt-2" style={{ fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif", textShadow: "0 0 8px rgba(176,38,255,0.04)" }}>
+          <h3 className="text-base sm:text-lg font-bold text-white mt-2" style={{ fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif", textShadow: "0 0 8px rgba(176,38,255,0.04)" }}>
             {project.title}
           </h3>
-          <p className="text-sm mt-1 tracking-[0.05em]" style={{ color: "#999", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{project.tag}</p>
+          <p className="text-xs sm:text-sm mt-1 tracking-[0.05em]" style={{ color: "#999", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{project.tag}</p>
         </div>
       </div>
 
-      <div className="flex gap-2 mb-4">
+      <div className="flex gap-1.5 sm:gap-2 mb-3 sm:mb-4">
         {project.metrics.map((m: any) => (
-          <div key={m.label} className="metric-box flex-1 p-3">
-            <div className="text-base font-bold" style={{ color: "var(--accent)", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{m.value}</div>
-            <div className="text-xs mt-1" style={{ color: "#bbb", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{m.label}</div>
+          <div key={m.label} className="metric-box flex-1 p-2 sm:p-3">
+            <div className="text-sm sm:text-base font-bold" style={{ color: "var(--accent)", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{m.value}</div>
+            <div className="text-[10px] sm:text-xs mt-1" style={{ color: "#bbb", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{m.label}</div>
           </div>
         ))}
       </div>
 
-      <div className="flex flex-wrap gap-1.5 mb-5">
-        {project.tech.slice(0, 3).map((t: string) => (<span key={t} className="text-[10px] px-2 py-0.5 rounded" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid var(--border)", color: "#999", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{t}</span>))}
+      <div className="flex flex-wrap gap-1.5 mb-4 sm:mb-5">
+        {project.tech.slice(0, 3).map((t: string) => (<span key={t} className="text-[9px] sm:text-[10px] px-2 py-0.5 rounded" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid var(--border)", color: "#999", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{t}</span>))}
       </div>
 
       <div
-        className="w-full py-3 text-sm font-medium rounded-lg transition-all duration-200 uppercase text-center"
+        className="w-full py-2.5 sm:py-3 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200 uppercase text-center"
         style={{
           background: hovered ? "rgba(176,38,255,0.12)" : "rgba(176,38,255,0.06)",
           border: `1px solid ${hovered ? "rgba(176,38,255,0.3)" : "rgba(176,38,255,0.12)"}`,
