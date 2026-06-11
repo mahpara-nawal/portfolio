@@ -16,7 +16,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <section className="relative py-16 px-4 sm:px-8 overflow-hidden" id="contact">
+    <section className="relative pt-10 pb-16 px-4 sm:px-8 overflow-hidden" id="contact">
       <div className="bg-grid absolute inset-0 z-0" />
       <div className="bg-diagonal absolute inset-0 z-0 pointer-events-none opacity-50" />
 

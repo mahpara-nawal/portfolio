@@ -84,7 +84,7 @@ export default function Projects({ onOpenModal }: { onOpenModal: (p: any) => voi
   }, []);
 
   return (
-    <section className="relative pt-8 pb-16 px-4 sm:px-8 overflow-hidden" id="projects">
+    <section className="relative pt-8 pb-10 px-4 sm:px-8 overflow-hidden" id="projects">
       {/* Diagonal overlay */}
       <div className="bg-diagonal absolute inset-0 z-0 pointer-events-none" />
       <div className="hidden md:block absolute left-0 top-0 bottom-0 w-px pointer-events-none" style={{ background: "linear-gradient(to bottom, transparent, rgba(176,38,255,0.03), transparent)" }} />
