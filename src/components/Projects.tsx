@@ -116,7 +116,58 @@ export default function Projects({ onOpenModal }: { onOpenModal: (p: any) => voi
         </div>
       </div>
 
-      <div className="marquee-container relative z-10 px-4 sm:px-0">
+      {/* Mobile: vertical stack */}
+      <div className="relative z-10 sm:hidden max-w-[1300px] mx-auto px-4 space-y-4">
+        {projects.map((p, i) => (
+          <div
+            key={p.title}
+            className="rounded-3xl cursor-pointer transition-all duration-300"
+            style={{
+              padding: "1.25rem",
+              background: "rgba(18,18,18,0.85)",
+              border: "1px solid rgba(176,38,255,0.15)",
+            }}
+            onClick={() => onOpenModal(p)}
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-[10px] px-2 py-0.5 rounded tracking-[0.15em]" style={{ background: "rgba(176,38,255,0.08)", color: "var(--accent)", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>
+                {p.dept}
+              </span>
+              <span className="text-[10px] tracking-[0.1em]" style={{ color: "#bbb", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>
+                {String(i + 1).padStart(2, "0")}
+              </span>
+            </div>
+            <h3 className="text-base font-bold text-white mt-1" style={{ fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{p.title}</h3>
+            <p className="text-xs mt-1 tracking-[0.05em]" style={{ color: "#999", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{p.tag}</p>
+            <div className="flex gap-1.5 mt-3 mb-3">
+              {p.metrics.map((m: any) => (
+                <div key={m.label} className="metric-box flex-1 p-2">
+                  <div className="text-sm font-bold" style={{ color: "var(--accent)", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{m.value}</div>
+                  <div className="text-[10px] mt-0.5" style={{ color: "#bbb", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{m.label}</div>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-1.5 mb-3">
+              {p.tech.slice(0, 3).map((t: string) => (<span key={t} className="text-[9px] px-2 py-0.5 rounded" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid var(--border)", color: "#999", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{t}</span>))}
+            </div>
+            <div
+              className="w-full py-2.5 text-xs font-medium rounded-lg transition-all duration-200 uppercase text-center"
+              style={{
+                background: "rgba(176,38,255,0.06)",
+                border: "1px solid rgba(176,38,255,0.12)",
+                color: "var(--accent)",
+                fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif",
+                letterSpacing: "0.1em",
+              }}
+            >
+              View Case Study →
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: horizontal marquee */}
+      <div className="marquee-container relative z-10 hidden sm:block">
         <div className="marquee-track">
           {[...projects, ...projects].map((p, i) => (
             <MarqueeCard
