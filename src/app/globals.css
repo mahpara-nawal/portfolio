@@ -134,11 +134,12 @@ a, button, input, textarea { cursor: none; }
 
 /* ── Glassmorphism ── */
 .glass {
-  background: rgba(18, 18, 18, 0.6);
+  background: rgba(20, 10, 30, 0.55);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(176, 38, 255, 0.06);
   border-radius: var(--radius);
+  box-shadow: 0 0 30px rgba(176, 38, 255, 0.02);
 }
 
 .glass-strong {

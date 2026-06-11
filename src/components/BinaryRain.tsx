@@ -24,7 +24,7 @@ export default function BinaryRain() {
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      cols = canvas.width < 640 ? 30 : 60;
+      cols = canvas.width < 640 ? Math.floor(canvas.width / 18) : 60;
       drops = Array(cols).fill(1);
       colSizes = Array.from({ length: cols }, () => sizes[Math.floor(Math.random() * sizes.length)]);
       colX = Array.from({ length: cols }, () => Math.random() * canvas.width);
