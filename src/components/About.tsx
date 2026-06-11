@@ -80,7 +80,7 @@ export default function About() {
       <div className="hidden md:block absolute left-0 top-[70%] w-6 h-px pointer-events-none" style={{ background: "linear-gradient(to right, var(--accent), transparent)" }} />
 
       <div ref={wrapperRef} className="max-w-[1300px] mx-auto relative z-10 glass p-4 sm:p-6 md:p-12 rounded-3xl transition-all duration-1000" style={{ opacity: wrapperVisible ? 1 : 0, transform: wrapperVisible ? "translateY(0)" : "translateY(20px)" }}>
-        <div className="grid md:grid-cols-12 gap-8 mb-24">
+        <div className="grid md:grid-cols-12 gap-4 sm:gap-8 mb-16 sm:mb-24">
           <div className="md:col-span-5">
             <AnimateIn>
               <div className="flex items-center gap-2 mb-5">

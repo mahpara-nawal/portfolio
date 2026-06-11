@@ -92,7 +92,7 @@ export default function Projects({ onOpenModal }: { onOpenModal: (p: any) => voi
       <div ref={wrapperRef} className="max-w-[1300px] mx-auto relative z-10 glass p-4 sm:p-6 md:p-12 rounded-3xl transition-all duration-1000" style={{ opacity: wrapperVisible ? 1 : 0, transform: wrapperVisible ? "translateY(0)" : "translateY(20px)" }}>
         <div
           ref={titleRef}
-          className="grid md:grid-cols-12 gap-8"
+          className="grid md:grid-cols-12 gap-4 sm:gap-8"
           style={{ opacity: titleShow ? 1 : 0, transform: titleShow ? "translateY(0)" : "translateY(24px)", transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)" }}
         >
           <div className="md:col-span-5">
@@ -100,14 +100,14 @@ export default function Projects({ onOpenModal }: { onOpenModal: (p: any) => voi
               <span className="w-6 h-[2px]" style={{ background: "var(--accent)" }} />
               <span className="section-label">Projects</span>
             </div>
-            <h2 className="heading-lg text-[clamp(2.5rem,6vw,4.5rem)]" style={{ fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif", textShadow: "0 0 12px rgba(176,38,255,0.06)" }}>
-              <span style={{ whiteSpace: "nowrap" }}>Creating <span style={{ color: "var(--accent)" }}>impact</span></span>
+            <h2 className="heading-lg text-[clamp(1.8rem,6vw,4.5rem)]" style={{ fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif", textShadow: "0 0 12px rgba(176,38,255,0.06)" }}>
+              <span className="sm:whitespace-nowrap">Creating <span style={{ color: "var(--accent)" }}>impact</span></span>
               <br />
-              <span style={{ whiteSpace: "nowrap" }}>across <span style={{ color: "var(--accent)" }}>all essential</span></span>
+              <span className="sm:whitespace-nowrap">across <span style={{ color: "var(--accent)" }}>all essential</span></span>
               <br />
               industries
             </h2>
-            <p className="text-sm leading-relaxed tracking-wide mt-6" style={{ color: "#999", fontFamily: "'JetBrains Mono', 'Chakra Petch', monospace", textShadow: "0 0 12px rgba(176,38,255,0.03)" }}>
+            <p className="text-xs sm:text-sm leading-relaxed tracking-wide mt-4 sm:mt-6" style={{ color: "#999", fontFamily: "'JetBrains Mono', 'Chakra Petch', monospace", textShadow: "0 0 12px rgba(176,38,255,0.03)" }}>
               Want to see how I turn design problems into AI solutions? &darr;
             </p>
           </div>
@@ -116,58 +116,7 @@ export default function Projects({ onOpenModal }: { onOpenModal: (p: any) => voi
         </div>
       </div>
 
-      {/* Mobile: vertical stack */}
-      <div className="relative z-10 sm:hidden max-w-[1300px] mx-auto px-4 space-y-4">
-        {projects.map((p, i) => (
-          <div
-            key={p.title}
-            className="rounded-3xl cursor-pointer transition-all duration-300"
-            style={{
-              padding: "1.25rem",
-              background: "rgba(18,18,18,0.85)",
-              border: "1px solid rgba(176,38,255,0.15)",
-            }}
-            onClick={() => onOpenModal(p)}
-          >
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-[10px] px-2 py-0.5 rounded tracking-[0.15em]" style={{ background: "rgba(176,38,255,0.08)", color: "var(--accent)", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>
-                {p.dept}
-              </span>
-              <span className="text-[10px] tracking-[0.1em]" style={{ color: "#bbb", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>
-                {String(i + 1).padStart(2, "0")}
-              </span>
-            </div>
-            <h3 className="text-base font-bold text-white mt-1" style={{ fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{p.title}</h3>
-            <p className="text-xs mt-1 tracking-[0.05em]" style={{ color: "#999", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{p.tag}</p>
-            <div className="flex gap-1.5 mt-3 mb-3">
-              {p.metrics.map((m: any) => (
-                <div key={m.label} className="metric-box flex-1 p-2">
-                  <div className="text-sm font-bold" style={{ color: "var(--accent)", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{m.value}</div>
-                  <div className="text-[10px] mt-0.5" style={{ color: "#bbb", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{m.label}</div>
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-wrap gap-1.5 mb-3">
-              {p.tech.slice(0, 3).map((t: string) => (<span key={t} className="text-[9px] px-2 py-0.5 rounded" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid var(--border)", color: "#999", fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif" }}>{t}</span>))}
-            </div>
-            <div
-              className="w-full py-2.5 text-xs font-medium rounded-lg transition-all duration-200 uppercase text-center"
-              style={{
-                background: "rgba(176,38,255,0.06)",
-                border: "1px solid rgba(176,38,255,0.12)",
-                color: "var(--accent)",
-                fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif",
-                letterSpacing: "0.1em",
-              }}
-            >
-              View Case Study →
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Desktop: horizontal marquee */}
-      <div className="marquee-container relative z-10 hidden sm:block">
+      <div className="marquee-container relative z-10">
         <div className="marquee-track">
           {[...projects, ...projects].map((p, i) => (
             <MarqueeCard

@@ -49,13 +49,13 @@ export default function Contact() {
         className="relative z-10 max-w-[1300px] mx-auto glass p-4 sm:p-6 md:p-12 rounded-3xl"
         style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(24px)", transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)" }}
       >
-        <div className="grid md:grid-cols-12 gap-8 items-start">
+        <div className="grid md:grid-cols-12 gap-4 sm:gap-8 items-start">
           <div className="md:col-span-5">
             <div className="flex items-center gap-2 mb-5">
               <span className="w-6 h-[2px]" style={{ background: "var(--accent)" }} />
               <span className="section-label">Contact</span>
             </div>
-            <h2 className="heading-lg text-[clamp(2.5rem,6vw,4.5rem)]" style={{ fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif", textShadow: "0 0 12px rgba(176,38,255,0.06)" }}>
+            <h2 className="heading-lg text-[clamp(1.8rem,6vw,4.5rem)]" style={{ fontFamily: "'ASTONIX', 'Orbitron', 'Audiowide', sans-serif", textShadow: "0 0 12px rgba(176,38,255,0.06)" }}>
               Let&apos;s
               <br />
               <span style={{ color: "var(--accent)" }}>build</span>
